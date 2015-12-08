@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+
+
 def function(x, t):
     return x
 
@@ -22,7 +25,9 @@ def main():
         x = x + h * function(x,i)
         points.append((i,x))
 
-    print(points)
+    points = map(list, zip(*points))
+    plt.plot(points[0], points[1])
+    plt.show()
 
 if __name__ == '__main__':
     main()
